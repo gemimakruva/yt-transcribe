@@ -1,6 +1,6 @@
 # yt-transcribe
 
-Transcribe YouTube videos or local video/audio files to text — using [faster-whisper](https://github.com/SYSTRAN/faster-whisper) (offline, no API key needed).
+Transcribe YouTube videos or local video/audio files to text. Uses [faster-whisper](https://github.com/SYSTRAN/faster-whisper), runs offline, no API key needed.
 
 ```
 python transcribe.py https://www.youtube.com/watch?v=abc123
@@ -141,7 +141,7 @@ python transcribe.py rekaman.wav
 | Option | Description |
 |--------|-------------|
 | `--model` / `-m` | Whisper model size (default: `base`) |
-| `--lang` / `-l` | Language code — `id`, `en`, `ja`, etc. (default: auto-detect) |
+| `--lang` / `-l` | Language code, e.g. `id`, `en`, `ja` (default: auto-detect) |
 | `--output` / `-o` | Output file path (default: `transcript.txt`) |
 
 ### Model sizes
@@ -149,7 +149,7 @@ python transcribe.py rekaman.wav
 | Model | RAM | Speed | Accuracy | Best for |
 |-------|-----|-------|----------|----------|
 | `tiny` | ~1 GB | Fastest | Rough | Quick preview, clear audio |
-| `base` | ~1 GB | Fast | Good | **Default — good enough for most** |
+| `base` | ~1 GB | Fast | Good | **Default, good enough for most** |
 | `small` | ~2 GB | Medium | Solid | Better accuracy, still fast |
 | `medium` | ~5 GB | Slow | Great | Important transcripts |
 | `large-v3` | ~10 GB | Slowest | Best | Maximum accuracy (needs good hardware) |

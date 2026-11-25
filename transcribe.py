@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-yt-transcribe — Transcribe YouTube videos or local video/audio files to text.
+yt-transcribe: Transcribe YouTube videos or local video/audio files to text.
 
 Usage:
     python transcribe.py <youtube-url-or-file> [options]
