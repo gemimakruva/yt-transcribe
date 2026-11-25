@@ -11,36 +11,102 @@ Works with:
 - Local video files (`.mp4`, `.mkv`, `.webm`, etc.)
 - Local audio files (`.mp3`, `.wav`, `.m4a`, `.ogg`, etc.)
 
-## Setup
+## Quick Install (copy-paste to terminal)
 
-### Windows
+### Windows (PowerShell)
+
+Open PowerShell and paste:
+
+```powershell
+# Install Python (skip if already installed)
+winget install Python.Python.3.12
+
+# Install FFmpeg
+winget install Gyan.FFmpeg
+
+# Restart PowerShell after installing Python and FFmpeg, then continue:
+
+# Download and setup
+git clone https://github.com/gemimakruva/yt-transcribe.git
+cd yt-transcribe
+pip install -r requirements.txt
+
+# Test it
+python transcribe.py --help
+```
+
+> No git? Download ZIP from the green "Code" button above, extract, then `cd` into the folder.
+
+### Mac (Terminal)
+
+Open Terminal and paste:
+
+```bash
+# Install Homebrew (skip if already installed)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install Python and FFmpeg
+brew install python ffmpeg
+
+# Download and setup
+git clone https://github.com/gemimakruva/yt-transcribe.git
+cd yt-transcribe
+pip3 install -r requirements.txt
+
+# Test it
+python3 transcribe.py --help
+```
+
+### Linux (Terminal)
+
+```bash
+# Ubuntu/Debian
+sudo apt update && sudo apt install -y python3 python3-pip ffmpeg git
+
+# Download and setup
+git clone https://github.com/gemimakruva/yt-transcribe.git
+cd yt-transcribe
+pip3 install -r requirements.txt
+
+# Test it
+python3 transcribe.py --help
+```
+
+---
+
+## Manual Setup (step by step)
+
+<details>
+<summary><strong>Windows (detailed)</strong></summary>
 
 1. **Install Python** (skip if you already have it)
 
    Download from [python.org/downloads](https://www.python.org/downloads/). During install, **check "Add Python to PATH"**.
 
-   Verify:
+   Verify in PowerShell:
    ```
    python --version
    ```
 
 2. **Install FFmpeg**
 
-   Download from [gyan.dev/ffmpeg](https://www.gyan.dev/ffmpeg/builds/) → "ffmpeg-release-essentials.zip". Extract it, then add the `bin` folder to your PATH:
+   Option A (recommended, via PowerShell):
+   ```
+   winget install Gyan.FFmpeg
+   ```
 
+   Option B (via [Chocolatey](https://chocolatey.org/)):
+   ```
+   choco install ffmpeg
+   ```
+
+   Option C (manual):
+   - Download from [gyan.dev/ffmpeg](https://www.gyan.dev/ffmpeg/builds/) > "ffmpeg-release-essentials.zip"
    - Extract to `C:\ffmpeg`
    - Search "Environment Variables" in Start menu
    - Under System Variables, find `Path`, click Edit
    - Add `C:\ffmpeg\bin`
-   - Click OK, restart your terminal
-
-   Or, if you have [Chocolatey](https://chocolatey.org/) or [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/):
-   ```
-   choco install ffmpeg
-   ```
-   ```
-   winget install ffmpeg
-   ```
+   - Click OK, restart PowerShell
 
    Verify:
    ```
@@ -54,7 +120,7 @@ Works with:
    cd yt-transcribe
    ```
 
-   Or download as ZIP from the green "Code" button above → Extract.
+   Or download as ZIP from the green "Code" button above > Extract.
 
 4. **Install dependencies**
 
@@ -64,24 +130,29 @@ Works with:
 
 5. **Done!** See [Usage](#usage) below.
 
----
+</details>
 
-### Mac
+<details>
+<summary><strong>Mac (detailed)</strong></summary>
 
-1. **Install Python** (skip if you already have it)
+1. **Install Homebrew** (skip if you already have it)
+
+   ```
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+2. **Install Python** (skip if you already have it)
 
    ```
    brew install python
    ```
-
-   Or download from [python.org/downloads](https://www.python.org/downloads/).
 
    Verify:
    ```
    python3 --version
    ```
 
-2. **Install FFmpeg**
+3. **Install FFmpeg**
 
    ```
    brew install ffmpeg
@@ -92,22 +163,24 @@ Works with:
    ffmpeg -version
    ```
 
-3. **Download this repo**
+4. **Download this repo**
 
    ```
    git clone https://github.com/gemimakruva/yt-transcribe.git
    cd yt-transcribe
    ```
 
-4. **Install dependencies**
+5. **Install dependencies**
 
    ```
    pip3 install -r requirements.txt
    ```
 
-5. **Done!** See [Usage](#usage) below.
+6. **Done!** See [Usage](#usage) below.
 
-> **Note for Mac:** Use `python3` and `pip3` instead of `python` and `pip`.
+> **Note:** On Mac, use `python3` and `pip3` instead of `python` and `pip`.
+
+</details>
 
 ---
 
