@@ -2,9 +2,7 @@
 
 Transcribe YouTube videos or local video/audio files to text. Uses [faster-whisper](https://github.com/SYSTRAN/faster-whisper), runs offline, no API key needed.
 
-```
-python transcribe.py https://www.youtube.com/watch?v=abc123
-```
+![demo](demo.gif)
 
 Works with:
 - YouTube URLs (paste link)
